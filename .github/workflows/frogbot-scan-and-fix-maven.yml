@@ -1,7 +1,8 @@
 name: "Frogbot Scan and Fix"
 on:
-  pull_request_target:
-    types: [opened, synchronize]
+  schedule:
+    # The repository will be scanned once a day at 00:00 GMT.
+    - cron: "* * * * *"
 permissions:
   contents: write
   pull-requests: write
